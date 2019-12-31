@@ -1,6 +1,6 @@
 ## MIDeepSeg
 This repository proivdes a 2D medical image interactive segmentation method for segmentation and annotation.
-[![ScreenShot](/upload/ask/29/W/WebMole_Youtube_Video.png)](https://github.com/Luoxd1996/MIDeepSeg/blob/master/demo_video/unseen-kidney-CT.mkv)
+ ![image](https://github.com/Luoxd1996/MIDeepSeg/blob/master/demo_video/demo.gif)
 
 ## Requirements
 Before you can use this package for image segmentation. You should:

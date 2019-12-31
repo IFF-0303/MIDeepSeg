@@ -32,3 +32,5 @@ python mideepseg/main.py
 [dextr_link]: https://openaccess.thecvf.com/content_cvpr_2018/papers/Maninis_Deep_Extreme_Cut_CVPR_2018_paper.pdf
 [deepigeos_link]: https://ieeexplore.ieee.org/document/8370732
 [bifseg_link]: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8270673
+
+* In the future, more details will be published on our paper.

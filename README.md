@@ -12,10 +12,18 @@ Before you can use this package for image segmentation. You should:
 [geos_dis_link]: https://github.com/taigw/GeodisITK
 [simplecrf_link]: https://github.com/HiLab-git/SimpleCRF
 ## How to use
-1. launch the GUI
+1, compile the crf library:
+
+```bash
+cd lib/crf_wrap
+python setup.py build
+python setup.py install
+```
+
+2. launch the GUI
 ```bash
 python mideepseg/main.py
 ``` 
-2. load an image for segmentation. Once the image is loaded,  Firstly, give some edge points by left mouse to get an initial interactions, click the Segmentation button to obtain an initial segmentation. Then, press left mouse button to give clicks in under-segmented regions, and press right mouse button to give clicks  in over-segmented region. Then click the Refinement button, and the segmentation will be updated according to the interactions.
+3. load an image for segmentation. Once the image is loaded,  Firstly, give some edge points by left mouse to get an initial interactions, click the Segmentation button to obtain an initial segmentation. Then, press left mouse button to give clicks in under-segmented regions, and press right mouse button to give clicks  in over-segmented region. Then click the Refinement button, and the segmentation will be updated according to the interactions.
 
-3. Note that, the pretrained model is only trained with placenta, fetal brain in T2-MRI and liver in CT.
+4. Note that, the pretrained model is only trained with placenta, fetal brain in T2-MRI and liver in CT.

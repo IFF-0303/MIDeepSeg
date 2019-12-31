@@ -5,7 +5,7 @@ This repository proivdes a 2D medical image interactive segmentation method for 
 ## Requirements
 Before you can use this package for image segmentation. You should:
 * [Pytorch][torch_link] version >=1.0.1
-* Some common python packages such as Numpy, Pandas, SimpleITK,OpenCV
+* Some common python packages such as Numpy, Pandas, SimpleITK,OpenCV, pyqt5, scipy......
 * Install the [geodesic_distance_tool][geos_dis_link] for geodesic distance transformation.
 * Install the [SimpleCRF][simplecrf_link] for interactive refinement.
 ## How to use

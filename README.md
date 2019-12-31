@@ -6,6 +6,7 @@ Before you can use this package for image segmentation. You should:
 * Some common python packages such as Numpy, Pandas, SimpleITK,OpenCV
 * Install the [geodesic_distance tool][geos_dis_link] for geodesic distance transformation.
 * Install the [SimpleCRF][simplecrf_link] for interactive refinement.
+
 [geos_dis_link]: https://github.com/taigw/GeodisITK
 [simplecrf_link]: https://github.com/HiLab-git/SimpleCRF
 ## How to use

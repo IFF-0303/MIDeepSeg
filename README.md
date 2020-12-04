@@ -1,7 +1,7 @@
 ## MIDeepSeg
 This repository proivdes a 2D medical image interactive segmentation method for segmentation and annotation.
  ![image](https://github.com/Luoxd1996/MIDeepSeg/blob/master/demo_video/demo.gif)
-* Note that, there are some differences from the paper described in the refinement stage, due to patent protection (this work done in a company during a summer internship). As an alternative, I re-implemented an easy refinement strategy to handle this dilemma. So, if you have some questions about the refinement stage, please refer to this implementation and paper descriptions or re-implement it by yourself, I am sorry to can not provide more details on the refinement stage, but any question and discussion about other modules are warmly welcomed.
+* **Note that**, there are some differences from the paper descriptions in the refinement stage, due to **Patent Protection** (this work done in a company during a summer internship). As an alternative, I re-implemented an easy refinement strategy to handle this dilemma. So, if you have some questions about the refinement stage, please refer to this implementation and paper descriptions or re-implement it by yourself. I am sorry to can not provide more details on the refinement stage, but any question and discussion about other modules are warmly welcomed.
 
 ## Requirements
 Before you can use this package for image segmentation. You should:

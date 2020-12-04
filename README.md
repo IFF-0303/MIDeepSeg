@@ -26,6 +26,8 @@ python mideepseg/main.py
 
 4. Note that, the pretrained model is only trained with placenta, fetal brain in T2-MRI and liver in CT.
 
+* In the future, more details will be published on our paper.
+## Acknowledgment and Statement
 * We thank the authors of [Deep_Extreme_Cut][dextr_link] , [DeepIGeoS][deepigeos_link] and [BIFSeg][bifseg_link] !
 
 [geos_dis_link]: https://github.com/taigw/GeodisITK
@@ -33,5 +35,5 @@ python mideepseg/main.py
 [dextr_link]: https://openaccess.thecvf.com/content_cvpr_2018/papers/Maninis_Deep_Extreme_Cut_CVPR_2018_paper.pdf
 [deepigeos_link]: https://ieeexplore.ieee.org/document/8370732
 [bifseg_link]: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8270673
-
-* In the future, more details will be published on our paper.
+ 
+* This project was designed for academic research, not for clinical use, and also not for commercial use, it also a protected patent.

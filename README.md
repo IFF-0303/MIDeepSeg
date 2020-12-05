@@ -33,6 +33,6 @@ python mideepseg/main.py
 [dextr_link]: https://openaccess.thecvf.com/content_cvpr_2018/papers/Maninis_Deep_Extreme_Cut_CVPR_2018_paper.pdf
 [deepigeos_link]: https://ieeexplore.ieee.org/document/8370732
 [bifseg_link]: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8270673
-* This project was designed for academic research, not for clinical or commercial use, as it's a protected patent.  If you want to use it for commercial, please contact [Prof. Guotai Wang]<mailto:guotai.wang@uestc.edu.cn>.
+* This project was designed for academic research, not for clinical or commercial use, as it's a protected patent.  If you want to use it for commercial, please contact Prof. Guotai Wang (guotai.wang@uestc.edu.cn).
 
 * In the future, more details will be published on our paper.

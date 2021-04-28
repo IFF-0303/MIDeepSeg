@@ -1,4 +1,4 @@
-## MIDeepSeg: Minimally Interactive Segmentation of Unseen Objects from Medical Images Using Deep Learning [Arxiv](https://arxiv.org/pdf/2104.12166.pdf) and [Demo](https://www.youtube.com/watch?v=eq-tqlJnckE)
+## MIDeepSeg: Minimally Interactive Segmentation of Unseen Objects from Medical Images Using Deep Learning [[Arxiv]](https://arxiv.org/pdf/2104.12166.pdf) and [[Demo]](https://www.youtube.com/watch?v=eq-tqlJnckE)
 This repository proivdes a 2D medical image interactive segmentation method for segmentation and annotation.
 ![image](https://github.com/Luoxd1996/MIDeepSeg/blob/master/demo_video/pancreas.gif)
 ## Requirements
@@ -32,6 +32,6 @@ python mideepseg/main.py
 [dextr_link]: https://openaccess.thecvf.com/content_cvpr_2018/papers/Maninis_Deep_Extreme_Cut_CVPR_2018_paper.pdf
 [deepigeos_link]: https://ieeexplore.ieee.org/document/8370732
 [bifseg_link]: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8270673
-* This project was designed for academic research, not for clinical or commercial use, as it's a protected patent.  If you want to use it for commercial, please contact Prof. Guotai Wang (guotai.wang@uestc.edu.cn).
+* This project was designed for academic research, not for clinical or commercial use, as it's a protected patent.  If you want to use it for commercial, please contact Prof. Guotai Wang (X.wang@uestc.edu.cn, X=guotai).
 
-* More details were described in our paper [Arxiv](https://www.youtube.com/watch?v=eq-tqlJnckE).
+* More details were described in our paper [[Arxiv]](https://www.youtube.com/watch?v=eq-tqlJnckE).

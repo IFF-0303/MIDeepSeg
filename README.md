@@ -22,7 +22,7 @@ python mideepseg/main.py
 ``` 
 3. load an image for segmentation. Once the image is loaded,  Firstly, give some edge points by left mouse to get an initial interactions, click the Segmentation button to obtain an initial segmentation. Then, press left mouse button to give clicks in under-segmented regions, and press right mouse button to give clicks  in over-segmented region. Then click the Refinement button, and the segmentation will be updated according to the interactions.
 
-4. Note that, the pretrained model is only trained with placenta, fetal brain in T2-MRI and liver in CT.
+4. Note that, the pretrained model is only trained with placenta MR-T2 data.
 
 ## Acknowledgment and Statement
 * We thank the authors of [Deep_Extreme_Cut][dextr_link] , [DeepIGeoS][deepigeos_link] and [BIFSeg][bifseg_link] !

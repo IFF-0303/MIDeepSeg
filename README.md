@@ -1,6 +1,6 @@
 ## MIDeepSeg: Minimally Interactive Segmentation of Unseen Objects from Medical Images Using Deep Learning
 This repository proivdes a 2D medical image interactive segmentation method for segmentation and annotation.
-![image](https://github.com/HiLab-git/MIDeepSeg/blob/master/demo_video/pancreas.gif)
+![image](https://github.com/Luoxd1996/MIDeepSeg/blob/master/demo_video/pancreas.gif)
 ## Requirements
 Before you can use this package for image segmentation. You should:
 * [Pytorch][torch_link] version >=1.0.1

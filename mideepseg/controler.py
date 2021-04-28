@@ -30,8 +30,8 @@ class Controler(object):
     extreme_points = 5
     foreground = 2
     background = 3
-    imageName = "mideepseg/logo.png"
-    model_path = "mideepseg/iter_15000.pth"
+    imageName = "../mideepseg/logo.png"
+    model_path = "../mideepseg/iter_15000.pth"
 
     def __init__(self):
         self.img = None
@@ -244,6 +244,7 @@ class Controler(object):
 
         fore_seeds = extends_points(fore_seeds)
         back_seeds = extends_points(back_seeds)
+
         all_refined_seeds = np.maximum(fore_seeds, back_seeds)
         all_seeds = np.maximum(all_refined_seeds, self.initial_extreme_seed)
 
@@ -251,7 +252,6 @@ class Controler(object):
         cropped_img = cropped_image(self.img, bbox)
 
         normal_img = itensity_standardization(cropped_img)
-        # init_seg = softmax(softmax([self.initial_seg, 1.0 - self.initial_seg]))
         init_seg = [self.initial_seg, 1.0-self.initial_seg]
         fg_prob = init_seg[0]
         bg_prob = init_seg[1]
@@ -302,7 +302,6 @@ class Controler(object):
             ndimage.morphology.binary_opening(pred, strt), np.uint8)
         seg = np.asarray(
             ndimage.morphology.binary_closing(pred, strt), np.uint8)
-        # seg = ndimage.binary_fill_holes(seg)
         _, contours, hierarchy = cv2.findContours(
             seg, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         img = self.images.copy()

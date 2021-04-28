@@ -21,7 +21,6 @@ class MIDeepSeg(QWidget):
         self.all_datasets = []
 
         self.initUI()
-        self.time_file = open("time.txt", "a")
 
     def initUI(self):
         self.a = QApplication(sys.argv)

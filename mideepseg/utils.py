@@ -2,7 +2,7 @@ import os
 import random
 from os.path import join as opj
 
-import geodesic_distance
+import GeodisTK
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy
@@ -145,7 +145,7 @@ def interaction_geodesic_distance(img, seed, threshold=0):
     if seed.sum() > 0:
         I = itensity_normalize_one_volume(img)
         S = seed
-        geo_dis = geodesic_distance.geodesic2d_fast_marching(I, S)
+        geo_dis = GeodisTK.geodesic2d_fast_marching(I, S)
         # geo_dis = geodesic_distance.geodesic2d_raster_scan(I, S)
         if threshold > 0:
             geo_dis[geo_dis > threshold] = threshold
@@ -161,7 +161,7 @@ def interaction_refined_geodesic_distance(img, seed, threshold=0):
     if seed.sum() > 0:
         I = itensity_normalize_one_volume(img)
         S = seed
-        geo_dis = geodesic_distance.geodesic2d_raster_scan(I, S)
+        geo_dis = GeodisTK.geodesic2d_fast_marching(I, S)
         if threshold > 0:
             geo_dis[geo_dis > threshold] = threshold
             geo_dis = geo_dis / threshold

@@ -1,7 +1,6 @@
 ## MIDeepSeg: Minimally Interactive Segmentation of Unseen Objects from Medical Images Using Deep Learning
 This repository proivdes a 2D medical image interactive segmentation method for segmentation and annotation.
-* **Note that**, there are some differences from the paper descriptions in the refinement stage, due to **Patent Protection** (this work done in a company during a summer internship). As an alternative, I re-implemented an easy refinement strategy to handle this dilemma, and I think this easy implementation also can lead to efficient and accurate refinement results. So, if you have some questions about the refinement stage, please refer to this implementation or the paper descriptions or re-implement it by yourself. I am sorry to can not provide more details about the refinement stage, but any question and discussion about other modules are warmly welcomed.
-![image](https://github.com/Luoxd1996/MIDeepSeg/blob/master/demo_video/demo.gif)
+![image](https://github.com/HiLab-git/MIDeepSeg/blob/master/demo_video/pancreas.mp4)
 ## Requirements
 Before you can use this package for image segmentation. You should:
 * [Pytorch][torch_link] version >=1.0.1
@@ -28,7 +27,7 @@ python mideepseg/main.py
 ## Acknowledgment and Statement
 * We thank the authors of [Deep_Extreme_Cut][dextr_link] , [DeepIGeoS][deepigeos_link] and [BIFSeg][bifseg_link] !
 
-[geos_dis_link]: https://github.com/taigw/GeodisITK
+[geos_dis_link]: https://github.com/taigw/GeodisTK
 [simplecrf_link]: https://github.com/HiLab-git/SimpleCRF
 [dextr_link]: https://openaccess.thecvf.com/content_cvpr_2018/papers/Maninis_Deep_Extreme_Cut_CVPR_2018_paper.pdf
 [deepigeos_link]: https://ieeexplore.ieee.org/document/8370732

@@ -2,15 +2,17 @@
 This repository proivdes a 2D medical image interactive segmentation method for segmentation and annotation.
 ![image](https://github.com/Luoxd1996/MIDeepSeg/blob/master/demo_video/pancreas.gif)
 * This project was originally developed for our previous works ([MIDeepSeg](https://arxiv.org/pdf/2104.12166.pdf), if you find it's useful for your research, please consider to cite the followings:
-         @article{luo2021mideepseg,
-            title={MIDeepSeg: Minimally interactive segmentation of unseen objects from medical images using deep learning},
-            author={Luo, Xiangde and Wang, Guotai and Song, Tao and Zhang, Jingyang and Aertsen, Michael and Deprest, Jan and Ourselin, Sebastien and Vercauteren,                Tom and Zhang, Shaoting},
-              journal={Medical Image Analysis},
-            volume={72},
-            pages={102102},
-            year={2021},
-            publisher={Elsevier}
-          }
+
+		@article{luo2021mideepseg,
+                  title={MIDeepSeg: Minimally interactive segmentation of unseen objects from medical images using deep learning},
+                  author={Luo, Xiangde and Wang, Guotai and Song, Tao and Zhang, Jingyang and Aertsen, Michael and Deprest, Jan and Ourselin, Sebastien and                                  Vercauteren, Tom and Zhang, Shaoting},
+                  journal={Medical Image Analysis},
+                  volume={72},
+                  pages={102102},
+                  year={2021},
+                  publisher={Elsevier}
+                          }
+
 ## Requirements
 Before you can use this package for image segmentation. You should:
 * PyTorch version >=1.0.1

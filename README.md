@@ -5,7 +5,7 @@ This repository proivdes a 2D medical image interactive segmentation method for 
 
 		@article{luo2021mideepseg,
                   title={MIDeepSeg: Minimally interactive segmentation of unseen objects from medical images using deep learning},
-                  author={Luo, Xiangde and Wang, Guotai and Song, Tao and Zhang, Jingyang and Aertsen, Michael and Deprest, Jan and Ourselin, Sebastien and                                  Vercauteren, Tom and Zhang, Shaoting},
+                  author={Luo, Xiangde and Wang, Guotai and Song, Tao and Zhang, Jingyang and Aertsen, Michael and Deprest, Jan and Ourselin, Sebastien and Vercauteren, Tom and Zhang, Shaoting},
                   journal={Medical Image Analysis},
                   volume={72},
                   pages={102102},

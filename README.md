@@ -35,7 +35,7 @@ python mideepseg/main.py
 4. Note that, the pretrained model is only trained with placenta MR-T2 data. 
 
 ## Acknowledgment and Statement
-* We thank the authors of [Deep_Extreme_Cut][dextr_link] , [DeepIGeoS][deepigeos_link] and [BIFSeg][bifseg_link] !
+* We thank the authors of [Deep_Extreme_Cut][dextr_link], [DeepIGeoS][deepigeos_link] and [BIFSeg][bifseg_link] for their elegant and efficient code base !
 
 [geos_dis_link]: https://github.com/taigw/GeodisTK
 [simplecrf_link]: https://github.com/HiLab-git/SimpleCRF

@@ -4,14 +4,13 @@ from os.path import join as opj
 
 import cv2
 import matplotlib.pyplot as plt
-import max_flow
+import maxflow
 import numpy as np
 import torch
 from PIL import Image
 from scipy import ndimage
 from scipy.ndimage import zoom
 from skimage import color, measure
-
 from network import UNet
 from utils import (add_countor, add_overlay, cropped_image, extends_points,
                    extreme_points, get_bbox, get_largest_two_component,
@@ -150,7 +149,7 @@ class Controler(object):
             cropped_seed = cropped_image(seed, bbox)
             cropped_geos = interaction_geodesic_distance(
                 normal_img, cropped_seed)
-            cropped_geos = itensity_normalization(cropped_geos)
+            # cropped_geos = itensity_normalization(cropped_geos)
 
             zoomed_img = zoom_image(normal_img)
             zoomed_geos = zoom_image(cropped_geos)
@@ -169,16 +168,16 @@ class Controler(object):
             fg_prob = predict[1]
             bg_prob = predict[0]
 
-            crf_seeds = np.zeros_like(zoomed_img, np.uint8)
-            crf_seeds = zoomed_img.astype(np.uint8)
-            crf_seeds[crf_seeds > 0] = 177
             crf_param = (5.0, 0.1)
-
-            fix_predict = max_flow.interactive_max_flow(zoomed_img.astype(
-                np.float32), fg_prob, bg_prob, crf_seeds, crf_param)
+            Prob = np.asarray([bg_prob, fg_prob])
+            Prob = np.transpose(Prob, [1, 2, 0])
+            fix_predict = maxflow.maxflow2d(zoomed_img.astype(
+                np.float32), Prob, crf_param)
 
             fixed_predict = zoom(fix_predict, (x/96, y/96), output=None,
                                  order=0, mode='constant', cval=0.0, prefilter=True)
+            # fixed_predict = zoom(fg_prob, (x/96, y/96), output=None,
+            #                      order=0, mode='constant', cval=0.0, prefilter=True)
 
             pred = np.zeros_like(self.img, dtype=np.float)
 
@@ -199,8 +198,8 @@ class Controler(object):
             seg = np.clip(seg, 0, 255)
             seg = np.array(seg, np.uint8)
 
-            _, contours, hierarchy = cv2.findContours(
-                seg, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+            contours, hierarchy = cv2.findContours(
+                seg, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)[-2:]
             if len(contours) != 0:
                 image_data = cv2.drawContours(
                     self.image, contours, -1, (0, 255, 0), 2)
@@ -213,7 +212,7 @@ class Controler(object):
         binaryimg = img
 
         label_image, num = measure.label(
-            binaryimg, neighbors=4, background=0, return_num=True)
+            binaryimg, background=0, return_num=True)
         areas = [r.area for r in measure.regionprops(label_image)]
         areas.sort()
         if len(areas) > 1:
@@ -271,9 +270,12 @@ class Controler(object):
         back_prob = np.maximum(cropped_back_geos, cropped_back_seg)
 
         crf_seeds = np.zeros_like(cropped_fore_seeds, np.uint8)
-        crf_seeds[cropped_fore_seeds > 0] = 127
+        crf_seeds[cropped_fore_seeds > 0] = 170
         crf_seeds[cropped_back_seeds > 0] = 255
         crf_param = (5.0, 0.1)
+
+        crf_seeds = np.asarray([crf_seeds == 255, crf_seeds == 170], np.uint8)
+        crf_seeds = np.transpose(crf_seeds, [1, 2, 0])
 
         x, y = fore_prob.shape
         prob_feature = np.zeros((2, x, y), dtype=np.float32)
@@ -286,24 +288,23 @@ class Controler(object):
         fg_prob = softmax_feture[0].astype(np.float32)
         bg_prob = softmax_feture[1].astype(np.float32)
 
-        refined_pred = max_flow.interactive_max_flow(
-            normal_img, fg_prob, bg_prob, crf_seeds, crf_param)
-        graphcut_refined_pred = max_flow.interactive_max_flow(normal_img, cropped_initial_seg.astype(
-            np.float32), (1.0 - cropped_initial_seg).astype(np.float32), crf_seeds, crf_param)
+        Prob = np.asarray([bg_prob, fg_prob])
+        Prob = np.transpose(Prob, [1, 2, 0])
+
+        refined_pred = maxflow.interactive_maxflow2d(
+            normal_img, Prob, crf_seeds, crf_param)
 
         pred = np.zeros_like(self.img, dtype=np.float)
         pred[bbox[0]:bbox[2], bbox[1]:bbox[3]] = refined_pred
 
-        graphcut_pred = np.zeros_like(self.img, dtype=np.float)
-        graphcut_pred[bbox[0]:bbox[2], bbox[1]:bbox[3]] = graphcut_refined_pred
         pred = self.largestConnectComponent(pred)
         strt = ndimage.generate_binary_structure(2, 1)
         seg = np.asarray(
             ndimage.morphology.binary_opening(pred, strt), np.uint8)
         seg = np.asarray(
             ndimage.morphology.binary_closing(pred, strt), np.uint8)
-        _, contours, hierarchy = cv2.findContours(
-            seg, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        contours, hierarchy = cv2.findContours(
+            seg, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)[-2:]
         img = self.images.copy()
         image_data = cv2.drawContours(
             self.images, contours, -1, (0, 255, 0), 2)

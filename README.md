@@ -8,12 +8,11 @@ Before you can use this package for image segmentation. You should:
 * Install the [geodesic_distance_tool][geos_dis_link] for geodesic distance transformation.
 * Install the [SimpleCRF][simplecrf_link] for interactive refinement.
 ## How to use
-1, compile the crf library:
+1, compile the requirement library:
 
 ```bash
-cd lib/crf_wrap
-python setup.py build
-python setup.py install
+pip install GeodisTK
+pip install SimpleCRF
 ```
 
 2. launch the GUI
@@ -22,7 +21,7 @@ python mideepseg/main.py
 ``` 
 3. load an image for segmentation. Once the image is loaded,  Firstly, give some edge points by left mouse to get an initial interactions, click the Segmentation button to obtain an initial segmentation. Then, press left mouse button to give clicks in under-segmented regions, and press right mouse button to give clicks  in over-segmented region. Then click the Refinement button, and the segmentation will be updated according to the interactions.
 
-4. Note that, the pretrained model is only trained with placenta MR-T2 data.
+4. Note that, the pretrained model is only trained with placenta MR-T2 data. 
 
 ## Acknowledgment and Statement
 * We thank the authors of [Deep_Extreme_Cut][dextr_link] , [DeepIGeoS][deepigeos_link] and [BIFSeg][bifseg_link] !

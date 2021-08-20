@@ -12,7 +12,7 @@ from PIL import Image
 from scipy import ndimage
 from scipy.ndimage import zoom
 from skimage import color, measure
-
+import cv2
 
 def itensity_normalize_one_volume(volume):
     """
@@ -143,10 +143,11 @@ def interaction_gaussian_distance(img, seed, sigma=10, bias=0):
 
 def interaction_geodesic_distance(img, seed, threshold=0):
     if seed.sum() > 0:
-        I = itensity_normalize_one_volume(img)
+        # I = itensity_normalize_one_volume(img)
+        I = np.asanyarray(img, np.float32)
         S = seed
         geo_dis = GeodisTK.geodesic2d_fast_marching(I, S)
-        # geo_dis = geodesic_distance.geodesic2d_raster_scan(I, S)
+        # geo_dis = GeodisTK.geodesic2d_raster_scan(I, S, 1.0, 2.0)
         if threshold > 0:
             geo_dis[geo_dis > threshold] = threshold
             geo_dis = geo_dis / threshold
@@ -154,12 +155,13 @@ def interaction_geodesic_distance(img, seed, threshold=0):
             geo_dis = np.exp(-geo_dis)
     else:
         geo_dis = np.zeros_like(img, dtype=np.float32)
-    return geo_dis
+    return cstm_normalize(geo_dis)
 
 
 def interaction_refined_geodesic_distance(img, seed, threshold=0):
     if seed.sum() > 0:
-        I = itensity_normalize_one_volume(img)
+        # I = itensity_normalize_one_volume(img)
+        I = np.asanyarray(img, np.float32)
         S = seed
         geo_dis = GeodisTK.geodesic2d_fast_marching(I, S)
         if threshold > 0:

@@ -1,4 +1,4 @@
-## MIDeepSeg: Minimally Interactive Segmentation of Unseen Objects from Medical Images Using Deep Learning [[Arxiv]](https://arxiv.org/pdf/2104.12166.pdf) and [[Demo]](https://www.youtube.com/watch?v=eq-tqlJnckE)
+## MIDeepSeg: Minimally Interactive Segmentation of Unseen Objects from Medical Images Using Deep Learning [[MedIA](https://www.sciencedirect.com/science/article/pii/S1361841521001481) or [Arxiv](https://arxiv.org/pdf/2104.12166.pdf)] and [[Demo]](https://www.youtube.com/watch?v=eq-tqlJnckE)
 This repository proivdes a 2D medical image interactive segmentation method for segmentation and annotation.
 ![image](https://github.com/Luoxd1996/MIDeepSeg/blob/master/demo_video/pancreas.gif)
 * This project was originally developed for our previous work [MIDeepSeg](https://arxiv.org/pdf/2104.12166.pdf), if you find it's useful for your research, please consider to cite the followings:
